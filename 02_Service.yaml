@@ -1,0 +1,17 @@
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-example-svc
+  labels:
+    app: 'nginx-example'
+    vers: '1'
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: 'nginx-example'
+    vers: '1'

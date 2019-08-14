@@ -1,0 +1,18 @@
+---
+# Ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-example-ingress
+  labels:
+    app: 'nginx-example'
+    vers: '1'
+spec:
+  rules:
+    - host: example.dockerlabs.de
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nginx-example-svc
+              servicePort: 80
